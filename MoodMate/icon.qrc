@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>主界面图标2.png</file>
+        <file>聊天图标.png</file>
+        <file>成就图标.png</file>
+        <file>冥想图标.png</file>
+        <file>心理测试图标.png</file>
+        <file>图表图标.png</file>
+        <file>心情日记图标.png</file>
+    </qresource>
+</RCC>
