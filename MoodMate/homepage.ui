@@ -13,138 +13,441 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <widget class="QScrollArea" name="scrollArea">
-     <property name="widgetResizable">
-      <bool>true</bool>
+  <widget class="QScrollArea" name="scrollArea">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>741</width>
+     <height>600</height>
+    </rect>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>739</width>
+      <height>598</height>
+     </rect>
+    </property>
+    <widget class="QFrame" name="frame">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>721</width>
+       <height>141</height>
+      </rect>
      </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="styleSheet">
+      <string notr="true">    border: 2px solid #4CAF50;       /* 边框宽度和颜色 */
+    border-radius: 20px;              /* 圆角边框，可改为0表示*/
+    background-color: rgba(0, 0, 0,0);      </string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <widget class="QLabel" name="dateLabel">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>715</width>
-        <height>574</height>
+        <x>10</x>
+        <y>10</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
-      <widget class="QFrame" name="frame">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>691</width>
-         <height>141</height>
-        </rect>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Shape::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Raised</enum>
-       </property>
-       <widget class="QLabel" name="label">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>58</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>每日一句</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="dateLabel">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>50</y>
-          <width>58</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>date</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="contentLabel">
-        <property name="geometry">
-         <rect>
-          <x>90</x>
-          <y>20</y>
-          <width>561</width>
-          <height>51</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>TextLabel</string>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QFrame" name="frame_2">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>170</y>
-         <width>331</width>
-         <height>241</height>
-        </rect>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Shape::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Raised</enum>
-       </property>
-       <widget class="QLabel" name="label_2">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>20</y>
-          <width>58</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>今日心情</string>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QFrame" name="frame_3">
-       <property name="geometry">
-        <rect>
-         <x>349</x>
-         <y>170</y>
-         <width>351</width>
-         <height>241</height>
-        </rect>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Shape::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Raised</enum>
-       </property>
-       <widget class="QLabel" name="label_3">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>20</y>
-          <width>58</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>心理测试</string>
-        </property>
-       </widget>
-      </widget>
+      <property name="styleSheet">
+       <string notr="true">
+color: #4CAF50;               /* 字体颜色 */
+font-family: &quot;微软雅黑&quot;;    /* 字体 */
+font-size: 24px;          /* 字体大小 */
+font-weight: bold;        /* 加粗 */
+border:None</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;May.14&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="quoteLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>701</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 700 24pt &quot;Kaiti SC&quot;;
+border:None</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;让灵魂从婴儿做起，像童年那样，咬着铅笔，&lt;/p&gt;&lt;p&gt;对世界报以纯真，好奇和汹涌的爱意 ——王开岭&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
      </widget>
     </widget>
-   </item>
-  </layout>
+    <widget class="QFrame" name="frame_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>170</y>
+       <width>341</width>
+       <height>201</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+    border: 2px solid #4CAF50;       /* 边框宽度和颜色 */
+    border-radius: 20px;              /* 圆角边框，可改为0表示*/
+    background-color: rgba(0,0,0,0);     
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #4CAF50;               /* 字体颜色 */
+font-family: &quot;微软雅黑&quot;;    /* 字体 */
+font-size: 20px;          /* 字体大小 */
+font-weight: bold;        /* 加粗 */
+border:None</string>
+      </property>
+      <property name="text">
+       <string>今日心情</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>60</y>
+        <width>241</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:None;
+font: 700 24pt &quot;Kaiti SC&quot;;
+</string>
+      </property>
+      <property name="text">
+       <string>你还未设置今日心情</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="DiaryButton">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>160</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	 border: 2px solid #4CAF50; 
+    border-radius: 10px;              /* 圆角边框，可改为0表示*/
+    background-color: rgb(143, 255, 129);      
+font: 700 18pt &quot;Kaiti SC&quot;;</string>
+      </property>
+      <property name="text">
+       <string>去打卡</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frame_3">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>170</y>
+       <width>361</width>
+       <height>201</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">    border: 2px solid #4CAF50;       /* 边框宽度和颜色 */
+    border-radius: 20px;              /* 圆角边框，可改为0表示*/
+    background-color: rgba(0,0,0,0);   </string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #4CAF50;               /* 字体颜色 */
+font-family: &quot;微软雅黑&quot;;    /* 字体 */
+font-size: 20px;          /* 字体大小 */
+font-weight: bold;        /* 加粗 */
+border:None</string>
+      </property>
+      <property name="text">
+       <string>心理测试</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>50</y>
+        <width>311</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:None;
+font: 700 24pt &quot;Kaiti SC&quot;;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;你今日还未参加心理测试&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="TestButton">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>160</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	 border: 2px solid #4CAF50; 
+    border-radius: 10px;              /* 圆角边框，可改为0表示*/
+    background-color: rgb(143, 255, 129);      
+font: 700 18pt &quot;Kaiti SC&quot;;</string>
+      </property>
+      <property name="text">
+       <string>去测试</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frame_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>380</y>
+       <width>341</width>
+       <height>201</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+    border: 2px solid #4CAF50;       /* 边框宽度和颜色 */
+    border-radius: 20px;              /* 圆角边框，可改为0表示*/
+    background-color: rgba(0,0,0,0);      
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #4CAF50;               /* 字体颜色 */
+font-family: &quot;微软雅黑&quot;;    /* 字体 */
+font-size: 20px;          /* 字体大小 */
+font-weight: bold;        /* 加粗 */
+border:None</string>
+      </property>
+      <property name="text">
+       <string>休息一下</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>60</y>
+        <width>231</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:None;
+font: 700 24pt &quot;Kaiti SC&quot;;
+</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;你今天休息了0min&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="RestButton">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>160</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	 border: 2px solid #4CAF50; 
+    border-radius: 10px;              /* 圆角边框，可改为0表示*/
+    background-color: rgb(143, 255, 129);      
+font: 700 18pt &quot;Kaiti SC&quot;;</string>
+      </property>
+      <property name="text">
+       <string>休息一下</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>100</y>
+        <width>231</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:None;
+font: 700 24pt &quot;Kaiti SC&quot;;
+</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;来休息一下吧！&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frame_5">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>380</y>
+       <width>361</width>
+       <height>201</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">    border: 2px solid #4CAF50;       /* 边框宽度和颜色 */
+    border-radius: 20px;              /* 圆角边框，可改为0表示*/
+    background-color: rgba(0,0,0,0);      </string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #4CAF50;               /* 字体颜色 */
+font-family: &quot;微软雅黑&quot;;    /* 字体 */
+font-size: 20px;          /* 字体大小 */
+font-weight: bold;        /* 加粗 */
+border:None</string>
+      </property>
+      <property name="text">
+       <string>心理助手</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>50</y>
+        <width>311</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:None;
+font: 700 24pt &quot;Kaiti SC&quot;;
+</string>
+      </property>
+      <property name="text">
+       <string>你今天还未和心理助手对话</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>100</y>
+        <width>321</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:None;
+font: 700 20pt &quot;Kaiti SC&quot;;</string>
+      </property>
+      <property name="text">
+       <string>心理助手随时等候着为您排忧解难！</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ChatPage">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>160</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	 border: 2px solid #4CAF50; 
+    border-radius: 10px;              /* 圆角边框，可改为0表示*/
+    background-color: rgb(143, 255, 129);      
+font: 700 18pt &quot;Kaiti SC&quot;;</string>
+      </property>
+      <property name="text">
+       <string>去聊天</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
  </widget>
  <resources/>
  <connections/>

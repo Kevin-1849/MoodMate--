@@ -67,6 +67,26 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->navigationBar, &QListWidget::currentRowChanged,
             stackWidget, &QStackedWidget::setCurrentIndex);
 
+    //接收信号
+    connect(homePage, &HomePage::requestSwitchToDiaryPage, this, [=]() {
+        ui->navigationBar->setCurrentRow(1);
+    });
+
+    connect(homePage, &HomePage::requestSwitchToTestPage, this, [=]() {
+        ui->navigationBar->setCurrentRow(2);
+    });
+
+    connect(homePage, &HomePage::requestSwitchToRestPage, this, [=]() {
+        ui->navigationBar->setCurrentRow(4);
+    });
+
+    connect(homePage, &HomePage::requestSwitchToChatPage, this, [=]() {
+        ui->navigationBar->setCurrentRow(3);
+    });
+
+
+
+
 }
 
 MainWindow::~MainWindow()
