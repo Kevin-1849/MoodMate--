@@ -42,7 +42,7 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>721</width>
+       <width>711</width>
        <height>141</height>
       </rect>
      </property>
@@ -83,7 +83,7 @@ border:None</string>
        <rect>
         <x>10</x>
         <y>40</y>
-        <width>701</width>
+        <width>691</width>
         <height>81</height>
        </rect>
       </property>
@@ -181,7 +181,7 @@ font: 700 18pt &quot;Kaiti SC&quot;;</string>
       <rect>
        <x>370</x>
        <y>170</y>
-       <width>361</width>
+       <width>351</width>
        <height>201</height>
       </rect>
      </property>
@@ -219,7 +219,7 @@ border:None</string>
      <widget class="QLabel" name="label_9">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>20</x>
         <y>50</y>
         <width>311</width>
         <height>61</height>
@@ -356,7 +356,7 @@ font: 700 24pt &quot;Kaiti SC&quot;;
       <rect>
        <x>370</x>
        <y>380</y>
-       <width>361</width>
+       <width>351</width>
        <height>201</height>
       </rect>
      </property>
@@ -394,7 +394,7 @@ border:None</string>
      <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
-        <x>40</x>
+        <x>30</x>
         <y>50</y>
         <width>311</width>
         <height>61</height>

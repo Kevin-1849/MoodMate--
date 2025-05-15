@@ -11,6 +11,8 @@ CONFIG += c++17
 SOURCES += \
     achievement.cpp \
     aichat.cpp \
+    editpage.cpp \
+    emojicalendarwidget.cpp \
     homepage.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -22,6 +24,8 @@ SOURCES += \
 HEADERS += \
     achievement.h \
     aichat.h \
+    editpage.h \
+    emojicalendarwidget.h \
     homepage.h \
     mainwindow.h \
     moodchart.h \
@@ -32,6 +36,7 @@ HEADERS += \
 FORMS += \
     achievement.ui \
     aichat.ui \
+    editpage.ui \
     homepage.ui \
     mainwindow.ui \
     moodchart.ui \

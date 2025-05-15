@@ -13,20 +13,318 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>80</y>
-     <width>141</width>
-     <height>111</height>
+     <x>0</x>
+     <y>0</y>
+     <width>741</width>
+     <height>600</height>
     </rect>
    </property>
-   <property name="text">
-    <string>这是心情日记</string>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
+   <property name="styleSheet">
+    <string notr="true">/* 整体滚动条背景 */
+QScrollBar:vertical {
+    background: #eaffea;  /* 浅绿色滚动条槽背景 */
+    width: 12px;
+    margin: 0px 0px 0px 0px;
+    border-radius: 6px;
+}
+
+/* 滚动条滑块 */
+QScrollBar::handle:vertical {
+    background: #a0e0a0; /* 深一点的绿色 */
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+/* 滚动条滑块hover状态 */
+QScrollBar::handle:vertical:hover {
+    background: #7ac97a;
+}
+
+/* 滚动条两端箭头 */
+QScrollBar::sub-line:vertical, QScrollBar::add-line:vertical {
+    height: 0px; /* 不显示箭头 */
+}
+
+/* 滚动条槽 */
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="widgetResizable">
+    <bool>false</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>730</width>
+      <height>798</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="0">
+     <item>
+      <widget class="QStackedWidget" name="stackedWidget">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>720</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="currentIndex">
+        <number>1</number>
+       </property>
+       <widget class="QWidget" name="page_2"/>
+       <widget class="QWidget" name="page">
+        <widget class="EmojiCalendarWidget" name="calendarWidget">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>700</width>
+           <height>439</height>
+          </rect>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">    QCalendarWidget QWidget {
+        background-color: #f5f5f5;
+        color: #333;
+        font-size: 14px;
+    }
+
+    QCalendarWidget QToolButton {
+        background-color: #ffffff;
+        color: #2e8b57;
+        font-weight: bold;
+        border: none;
+        padding: 5px;
+    }
+
+    QCalendarWidget QMenu {
+        background-color: #ffffff;
+		
+	
+	font: 700 13pt &quot;Songti SC&quot;;
+    }
+
+    QCalendarWidget QSpinBox {
+        color: #2e8b57;
+    }
+
+    QCalendarWidget QAbstractItemView:enabled {
+        font-size: 13px;
+        background-color: white;
+        selection-background-color: #aed581;
+        selection-color: black;
+        gridline-color: #ccc;
+		font-weight: bold;
+		font: 700 15pt &quot;Songti SC&quot;;
+    }
+	QCalendarWidget QAbstractItemView::item:hover {
+    		background-color: #ccffcc;
+	}
+QCalendarWidget QAbstractItemView::item:selected {
+    background-color: #aed581;
+    font-weight: bold;
+}
+    QCalendarWidget QAbstractItemView::item {
+        padding: 4px;
+    }</string>
+         </property>
+        </widget>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>440</y>
+           <width>700</width>
+           <height>335</height>
+          </rect>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>GroupBox</string>
+         </property>
+         <widget class="QLabel" name="dateLabel">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>30</y>
+            <width>141</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Songti TC</family>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgba(0,0,0,0)</string>
+          </property>
+          <property name="text">
+           <string>日期：2025.05.15</string>
+          </property>
+         </widget>
+         <widget class="QListWidget" name="timeRecordList">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>100</y>
+            <width>661</width>
+            <height>121</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgba(0,0,0,0)</string>
+          </property>
+         </widget>
+         <widget class="QTextBrowser" name="diaryBrowser">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>230</y>
+            <width>611</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgba(0,0,0,0)</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_2">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>70</y>
+            <width>101</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Songti TC</family>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgba(0,0,0,0)</string>
+          </property>
+          <property name="text">
+           <string>时段记录：</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_3">
+          <property name="geometry">
+           <rect>
+            <x>190</x>
+            <y>30</y>
+            <width>81</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Songti TC</family>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgba(0,0,0,0)</string>
+          </property>
+          <property name="text">
+           <string>总心情：</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_4">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>230</y>
+            <width>51</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Songti TC</family>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgba(0,0,0,0)</string>
+          </property>
+          <property name="text">
+           <string>日记：</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="editButton">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>271</y>
+            <width>171</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 2px solid #4CAF50; 
+    border-radius: 10px;              /* 圆角边框，可改为0表示*/
+    background-color: rgb(143, 255, 129);      
+font: 700 18pt &quot;Kaiti SC&quot;;</string>
+          </property>
+          <property name="text">
+           <string>查看/编辑心情日记</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>EmojiCalendarWidget</class>
+   <extends>QCalendarWidget</extends>
+   <header>emojicalendarwidget.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
