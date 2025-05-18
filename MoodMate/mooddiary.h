@@ -7,7 +7,6 @@
 #include <QStackedWidget>
 #include <QPushButton>
 
-#include "editpage.h"
 #include "emojicalendarwidget.h"
 #include "mooddata.h"
 

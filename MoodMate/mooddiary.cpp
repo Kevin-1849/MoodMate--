@@ -49,7 +49,6 @@ void MoodDiary::updateMoodPreview() {
 
 void MoodDiary::on_editButton_clicked()
 {
-    qDebug("1");
     ui->stackedWidget->setCurrentWidget(ui->editPage);
 }
 
