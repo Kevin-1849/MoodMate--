@@ -84,9 +84,6 @@ MainWindow::MainWindow(QWidget *parent)
         ui->navigationBar->setCurrentRow(3);
     });
 
-
-
-
 }
 
 MainWindow::~MainWindow()

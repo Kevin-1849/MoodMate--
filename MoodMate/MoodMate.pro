@@ -17,6 +17,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     moodchart.cpp \
+    mooddata.cpp \
     mooddiary.cpp \
     moodtest.cpp \
     rest.cpp
@@ -29,6 +30,7 @@ HEADERS += \
     homepage.h \
     mainwindow.h \
     moodchart.h \
+    mooddata.h \
     mooddiary.h \
     moodtest.h \
     rest.h
@@ -51,3 +53,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     icon.qrc
+
+DISTFILES += \
+    data/mood_diary.json

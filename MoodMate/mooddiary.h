@@ -9,6 +9,7 @@
 
 #include "editpage.h"
 #include "emojicalendarwidget.h"
+#include "mooddata.h"
 
 namespace Ui {
 class MoodDiary;
@@ -23,21 +24,17 @@ public:
     ~MoodDiary();
 
 private slots:
-    void onDateSelected(const QDate &date);
-    void onEditButtonClicked();
+    //void onDateSelected(const QDate &date);
+    //void onEditButtonClicked();
+
+    void on_editButton_clicked();
+
+    void on_calendarWidget_clicked(const QDate &date);
 
 private:
     Ui::MoodDiary *ui;
     QDate selectedDate;
-    //MoodData moodData;
-
-    EmojiCalendarWidget *calendar;
-    QLabel *moodLabel;
-    QTextEdit *notePreview;
-    QPushButton *editButton;
-
-    QStackedWidget *stack; // 当前 page 内部切换：日历视图 <-> 编辑界面
-    EditPage *editPage;
+    MoodData moodData;
 
     void updateMoodPreview();
 };
