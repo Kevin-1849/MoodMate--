@@ -86,7 +86,8 @@ bool MoodData::save(const QString &filename) {
 //获取某天的Mood
 DailyMood MoodData::getMoodForDate(const QDate &date) const {
     QString key = date.toString("yyyy.MM.dd");
-    return moodMap[key];
+    DailyMood mood = moodMap.value(key);  // 如果存在返回值，否则返回默认构造值
+    return mood;
 }
 
 //设置某天的Mood

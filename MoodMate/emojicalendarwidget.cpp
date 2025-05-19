@@ -1,7 +1,7 @@
 #include "emojicalendarwidget.h"
 #include <QPainter>
 #include <QFont>
-#include <QSysInfo>  // 判断系统平台
+
 
 EmojiCalendarWidget::EmojiCalendarWidget(QWidget *parent)
     : QCalendarWidget(parent)
@@ -38,43 +38,72 @@ EmojiCalendarWidget::EmojiCalendarWidget(QWidget *parent)
     QCalendarWidget QAbstractItemView:enabled {
         font-size: 13px;
         background-color: white;
-        selection-background-color: #aed581;
         selection-color: black;
+        selection-background-color: #aed581;
         gridline-color: #ccc;
     }
 
     QCalendarWidget QAbstractItemView::item {
+        color: black;
         padding: 4px;
     }
 )");
 }
 
-void EmojiCalendarWidget::setEmojiForDate(const QDate &date, const QString &emoji)
+/*void EmojiCalendarWidget::setEmojiForDate(const QDate &date, const QString &emoji)
 {
-    emojiMap[date] = emoji;
+    //emojiMap[date] = emoji;
     updateCell(date); // 只更新这一天
-}
+}*/
 
-void EmojiCalendarWidget::paintCell(QPainter *painter, const QRect &rect, const QDate &date) const
+void EmojiCalendarWidget::paintCell(QPainter *painter, const QRect &rect, QDate date) const
 {
     // 调用父类绘制原始内容
     QCalendarWidget::paintCell(painter, rect, date);
-
+    auto mood = moodData.getMoodForDate(date);
     // 如果这一天有 emoji，就绘制上去
-    if (emojiMap.contains(date)) {
-        painter->save();
+    //qDebug() << date;
+    //qDebug() << mood.dailyEmoji;
 
-        QFont emojiFont;
-#if defined(Q_OS_MAC)
-        emojiFont = QFont("Apple Color Emoji", 14);
-#elif defined(Q_OS_WIN)
-        emojiFont = QFont("Segoe UI Emoji", 14);
-#else
-        emojiFont = QFont("Noto Color Emoji", 14);
-#endif
-        painter->setFont(emojiFont);
-        painter->drawText(rect, Qt::AlignBottom | Qt::AlignHCenter, emojiMap.value(date));
+    if (mood.dailyEmoji != "") {
 
-        painter->restore();
+        painter->save();  // 保存状态
+        // 覆盖数字区域（上半部分）白色块
+        QRect topRect = QRect(rect.left(), rect.top(), rect.width(), rect.height()/2);
+
+        // 判断是否是选中日期
+        bool isSelected = (date == this->selectedDate());
+        if (isSelected) {
+            // 画选中背景色（保持绿色）
+            painter->fillRect(rect, QColor("#aed581"));  // 绿色背景
+        } else {
+            // 画正常背景
+            painter->fillRect(rect, Qt::white);
+        }
+
+        // 重画数字，字体大点，向上
+        // 判断是否周末
+        bool isWeekend = (date.dayOfWeek() == 6 || date.dayOfWeek() == 7);  // 6=周六，7=周日
+        QColor textColor = isWeekend ? QColor(Qt::red) : QColor(Qt::black);
+        painter->setPen(textColor);
+        QFont font = painter->font();
+        font.setBold(true);
+        font.setPointSize(14);
+        painter->setFont(font);
+        QRect numberRect = QRect(rect.left(), rect.top() + 2, rect.width(), rect.height()/2);
+        painter->drawText(numberRect, Qt::AlignHCenter | Qt::AlignTop, QString::number(date.day()));
+
+        QIcon icon = QIcon(mood.dailyEmoji);
+        int iconHeight = rect.height() / 2;
+        int iconWidth = iconHeight;
+        QRect iconRect(rect.left() + (rect.width() - iconWidth) / 2,
+                       rect.bottom() - iconHeight - 5,
+                       iconWidth,
+                       iconHeight);
+        icon.paint(painter, iconRect, Qt::AlignCenter);
     }
+}
+
+void EmojiCalendarWidget::refreshCalendar(){
+    updateCells();
 }

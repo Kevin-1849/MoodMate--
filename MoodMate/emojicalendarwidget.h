@@ -5,20 +5,23 @@
 #include <QDate>
 #include <QMap>
 
+#include "mooddata.h"
+
 class EmojiCalendarWidget : public QCalendarWidget
 {
     Q_OBJECT
 public:
+    MoodData moodData;
     explicit EmojiCalendarWidget(QWidget *parent = nullptr);
+    void refreshCalendar();
 
     // 设置某天的表情
-    void setEmojiForDate(const QDate &date, const QString &emoji);
+    //void setEmojiForDate(const QDate &date, const QString &emoji);
 
 protected:
-    void paintCell(QPainter *painter, const QRect &rect, const QDate &date) const;
+    void paintCell(QPainter *painter, const QRect &rect, QDate date) const override;
 
-private:
-    QMap<QDate, QString> emojiMap;  // 存储日期到表情的映射
+
 };
 
 #endif // EMOJICALENDARWIDGET_H

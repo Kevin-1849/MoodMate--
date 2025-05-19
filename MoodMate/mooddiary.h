@@ -45,6 +45,7 @@ private:
     QList<QString> emojiList = {"开心","庆祝","机智","酷帅","好吃","惊讶","平静","伤心","生气","尴尬","可怜","疲倦","思考"};
 
     void updateMoodPreview();
+    void updateCalendar();
     void show_editPage();
     void addMoodRecord(QListWidget *listWidget, const QString &timeLabelText, const QString &iconPath, const QString &noteText);
     void set_default(QComboBox* box, QString text);

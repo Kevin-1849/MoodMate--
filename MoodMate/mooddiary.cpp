@@ -13,6 +13,7 @@
 #include <QDir>
 #include <QProxyStyle>
 #include <QMessageBox>
+#include <QCalendarWidget>
 
 MoodDiary::MoodDiary(QWidget *parent)
     : QWidget(parent)
@@ -20,6 +21,9 @@ MoodDiary::MoodDiary(QWidget *parent)
 {
     ui->setupUi(this);
     ui->stackedWidget->setCurrentWidget(ui->calendarPage);
+    updateMoodPreview();
+    updateCalendar();
+
 }
 
 MoodDiary::~MoodDiary()
@@ -32,6 +36,14 @@ void MoodDiary::on_calendarWidget_clicked(const QDate &date)
 {
     selectedDate = date;
     updateMoodPreview();
+}
+
+//更新日历
+void MoodDiary::updateCalendar(){
+    ui->calendarWidget->moodData.load("data/mood_diary.json");
+    ui->calendarWidget->refreshCalendar();
+    qDebug() << "1";
+    ui->calendarWidget->update();
 }
 
 //增添心情记录函数
@@ -78,7 +90,7 @@ void MoodDiary::updateMoodPreview() {
         QPixmap pixmap(mood.dailyEmoji);
         ui->moodLabel->setPixmap(pixmap.scaled(32, 32, Qt::KeepAspectRatio, Qt::SmoothTransformation));
     }
-    qDebug() << mood.dailyNote;
+    //qDebug() << mood.dailyNote;
     ui->diaryBrowser->setText(mood.dailyNote.isEmpty()? "暂无心情笔记" : mood.dailyNote);
 
     addMoodRecord(ui->timeRecordList, "早上：", mood.timeSlots["morning"].emoji, mood.timeSlots["morning"].note);
@@ -127,7 +139,7 @@ void MoodDiary::set_default(QComboBox* box, QString text){
             return;
         }
     }
-    qDebug() << "Emoji path not found:" << text;
+    //qDebug() << "Emoji path not found:" << text;
 }
 
 void MoodDiary::set_default(QTextEdit* edit, QString text){
@@ -137,6 +149,8 @@ void MoodDiary::set_default(QTextEdit* edit, QString text){
 void MoodDiary::on_returnButton_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->calendarPage);
+    updateMoodPreview();
+    updateCalendar();
 }
 
 
