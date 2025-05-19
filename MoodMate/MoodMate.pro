@@ -49,7 +49,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    emoji.qrc \
     icon.qrc
 
 DISTFILES += \
-    data/mood_diary.json
+    data/mood_diary.json \
+    mood_diary.json

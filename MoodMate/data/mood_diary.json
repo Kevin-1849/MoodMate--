@@ -1,1 +1,38 @@
-{}
+{
+    "2025.05.18": {
+        "dailyEmoji": ":/emoji/伤心.jpeg",
+        "dailyNote": "翻着我们的照片\n想念若隐若现～\n去年   的冬天\n我们笑得很甜～",
+        "timeSlots": {
+            "afternoon": {
+                "emoji": ":/emoji/伤心.jpeg",
+                "note": "想念若隐若现～"
+            },
+            "evening": {
+                "emoji": "",
+                "note": ""
+            },
+            "morning": {
+                "emoji": ":/emoji/可怜.jpeg",
+                "note": "翻着我们的照片"
+            }
+        }
+    },
+    "2025.05.19": {
+        "dailyEmoji": ":/emoji/庆祝.jpeg",
+        "dailyNote": "哗啦啦啦啦天在下雨\n哗啦啦啦啦地在哭泣\n哗啦啦啦啦滴入我的心~\nyeah~yeah~",
+        "timeSlots": {
+            "afternoon": {
+                "emoji": ":/emoji/机智.jpeg",
+                "note": "哗啦啦啦啦地在哭泣"
+            },
+            "evening": {
+                "emoji": ":/emoji/酷帅.jpeg",
+                "note": "哗啦啦啦啦滴入我的心"
+            },
+            "morning": {
+                "emoji": ":/emoji/开心.jpeg",
+                "note": "哗啦啦啦啦天在下雨"
+            }
+        }
+    }
+}

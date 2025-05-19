@@ -69,7 +69,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
+      <y>-200</y>
       <width>730</width>
       <height>798</height>
      </rect>
@@ -96,14 +96,405 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
         <number>0</number>
        </property>
        <widget class="QWidget" name="editPage">
-        <widget class="QDateEdit" name="dateEdit">
+        <widget class="QTextEdit" name="morningEdit">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>80</y>
+           <width>491</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Songti TC</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label">
          <property name="geometry">
           <rect>
            <x>40</x>
-           <y>20</y>
-           <width>110</width>
-           <height>22</height>
+           <y>90</y>
+           <width>61</width>
+           <height>16</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgba(0,0,0,0);
+font: 18pt &quot;Songti SC&quot;;</string>
+         </property>
+         <property name="text">
+          <string>早上：</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_5">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>160</y>
+           <width>61</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgba(0,0,0,0);
+font: 18pt &quot;Songti SC&quot;;</string>
+         </property>
+         <property name="text">
+          <string>下午：</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_7">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>230</y>
+           <width>51</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgba(0,0,0,0);
+font: 18pt &quot;Songti SC&quot;;</string>
+         </property>
+         <property name="text">
+          <string>晚上：</string>
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="afternoonEdit">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>150</y>
+           <width>491</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Songti TC</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="eveningEdit">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>220</y>
+           <width>491</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Songti SC</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_8">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>22</y>
+           <width>61</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgba(0,0,0,0);
+font: 18pt &quot;Songti SC&quot;;</string>
+         </property>
+         <property name="text">
+          <string>心情：</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="morningEmojiBox">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>84</y>
+           <width>101</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">    QComboBox {
+        background-color: white;               /* 主体白色背景 */
+        border: 1px solid #b5d7b3;             /* 柔和绿色边框 */
+        border-radius: 6px;
+        padding: 4px 8px;
+        font-size: 16px;
+        color: #2e4e2e;                        /* 深绿色文字 */
+    }
+
+    QComboBox::drop-down {
+        subcontrol-origin: padding;
+        subcontrol-position: top right;
+        width: 18px;
+        border-left: 1px solid #b5d7b3;        /* 和外框协调 */
+    }
+
+    QComboBox::down-arrow {
+	   image: url(:/icon/下拉箭头.jpeg);
+        width: 12px;
+        height: 12px;
+    }
+
+    QComboBox QAbstractItemView {
+        background-color: white;               /* 下拉列表白色背景 */
+        border: 1px solid #b5d7b3;
+        selection-background-color: #d6f5d8;   /* 选中项浅绿色高亮 */
+        selection-color: #2e4e2e;
+        padding: 4px;
+        font-size: 15px;
+    }</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="afternoonEmojiBox">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>157</y>
+           <width>101</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">    QComboBox {
+        background-color: white;               /* 主体白色背景 */
+        border: 1px solid #b5d7b3;             /* 柔和绿色边框 */
+        border-radius: 6px;
+        padding: 4px 8px;
+        font-size: 16px;
+        color: #2e4e2e;                        /* 深绿色文字 */
+    }
+
+    QComboBox::drop-down {
+        subcontrol-origin: padding;
+        subcontrol-position: top right;
+        width: 18px;
+        border-left: 1px solid #b5d7b3;        /* 和外框协调 */
+    }
+
+    QComboBox::down-arrow {
+	   image: url(:/icon/下拉箭头.jpeg);
+        width: 12px;
+        height: 12px;
+    }
+
+    QComboBox QAbstractItemView {
+        background-color: white;               /* 下拉列表白色背景 */
+        border: 1px solid #b5d7b3;
+        selection-background-color: #d6f5d8;   /* 选中项浅绿色高亮 */
+        selection-color: #2e4e2e;
+        padding: 4px;
+        font-size: 15px;
+    }</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="eveningEmojiBox">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>227</y>
+           <width>101</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">    QComboBox {
+        background-color: white;               /* 主体白色背景 */
+        border: 1px solid #b5d7b3;             /* 柔和绿色边框 */
+        border-radius: 6px;
+        padding: 4px 8px;
+        font-size: 16px;
+        color: #2e4e2e;                        /* 深绿色文字 */
+    }
+
+    QComboBox::drop-down {
+        subcontrol-origin: padding;
+        subcontrol-position: top right;
+        width: 18px;
+        border-left: 1px solid #b5d7b3;        /* 和外框协调 */
+    }
+
+    QComboBox::down-arrow {
+	   image: url(:/icon/下拉箭头.jpeg);
+        width: 12px;
+        height: 12px;
+    }
+
+    QComboBox QAbstractItemView {
+        background-color: white;               /* 下拉列表白色背景 */
+        border: 1px solid #b5d7b3;
+        selection-background-color: #d6f5d8;   /* 选中项浅绿色高亮 */
+        selection-color: #2e4e2e;
+        padding: 4px;
+        font-size: 15px;
+    }</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="dailyEmojiBox">
+         <property name="geometry">
+          <rect>
+           <x>260</x>
+           <y>19</y>
+           <width>101</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">    QComboBox {
+        background-color: white;               /* 主体白色背景 */
+        border: 1px solid #b5d7b3;             /* 柔和绿色边框 */
+        border-radius: 6px;
+        padding: 4px 8px;
+        font-size: 16px;
+        color: #2e4e2e;                        /* 深绿色文字 */
+    }
+
+    QComboBox::drop-down {
+        subcontrol-origin: padding;
+        subcontrol-position: top right;
+        width: 18px;
+        border-left: 1px solid #b5d7b3;        /* 和外框协调 */
+    }
+
+    QComboBox::down-arrow {
+	   image: url(:/icon/下拉箭头.jpeg);
+        width: 12px;
+        height: 12px;
+    }
+
+    QComboBox QAbstractItemView {
+        background-color: white;               /* 下拉列表白色背景 */
+        border: 1px solid #b5d7b3;
+        selection-background-color: #d6f5d8;   /* 选中项浅绿色高亮 */
+        selection-color: #2e4e2e;
+        padding: 4px;
+        font-size: 15px;
+    }</string>
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="diaryEdit">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>330</y>
+           <width>651</width>
+           <height>361</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Songti SC</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_9">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>290</y>
+           <width>51</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgba(0,0,0,0);
+font: 18pt &quot;Songti SC&quot;;</string>
+         </property>
+         <property name="text">
+          <string>日记：</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_10">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>23</y>
+           <width>58</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgba(0,0,0,0);
+font: 18pt &quot;Songti SC&quot;;</string>
+         </property>
+         <property name="text">
+          <string>日期：</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="dateLabel_2">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>26</y>
+           <width>81</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgba(0,0,0,0);
+font: 18pt &quot;Songti SC&quot;;</string>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="saveButton">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>710</y>
+           <width>91</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 2px solid #4CAF50; 
+    border-radius: 10px;              /* 圆角边框，可改为0表示*/
+    background-color: rgb(143, 255, 129);      
+font: 700 18pt &quot;Kaiti SC&quot;;</string>
+         </property>
+         <property name="text">
+          <string>保存</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="returnButton">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>710</y>
+           <width>91</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 2px solid #4CAF50; 
+    border-radius: 10px;              /* 圆角边框，可改为0表示*/
+    background-color: rgb(143, 255, 129);      
+font: 700 18pt &quot;Kaiti SC&quot;;</string>
+         </property>
+         <property name="text">
+          <string>返回</string>
          </property>
         </widget>
        </widget>
@@ -221,7 +612,7 @@ QCalendarWidget QAbstractItemView::item:selected {
           </property>
           <property name="font">
            <font>
-            <family>STSong</family>
+            <family>Songti SC</family>
             <pointsize>18</pointsize>
            </font>
           </property>

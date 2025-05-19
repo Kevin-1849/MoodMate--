@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/emoji">
+        <file>庆祝.jpeg</file>
+        <file>尴尬.jpeg</file>
+        <file>好吃.jpeg</file>
+        <file>机智.jpeg</file>
+        <file>惊讶.jpeg</file>
+        <file>开心.jpeg</file>
+        <file>可怜.jpeg</file>
+        <file>酷帅.jpeg</file>
+        <file>疲倦.jpeg</file>
+        <file>平静.jpeg</file>
+        <file>生气.jpeg</file>
+        <file>思考.jpeg</file>
+        <file>伤心.jpeg</file>
+    </qresource>
+</RCC>
