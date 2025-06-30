@@ -8,5 +8,13 @@
         <file>图表图标.png</file>
         <file>心情日记图标.png</file>
         <file>下拉箭头.jpeg</file>
+        <file>check.png</file>
+        <file>assistant_cartoon.jpg</file>
+        <file>assistant_avatar.jpg</file>
+        <file>user_avatar.jpg</file>
+        <file>chat.png</file>
+        <file>fenxi.png</file>
+        <file>whitenoise.png</file>
+        <file>tubiao.png</file>
     </qresource>
 </RCC>

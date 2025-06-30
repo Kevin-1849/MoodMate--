@@ -4,12 +4,18 @@
 #include <QString>
 #include <QRandomGenerator>
 #include <QDate>
+#include <QPushButton>
+#include <QStyle>
 
 HomePage::HomePage(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::HomePage)
 {
     ui->setupUi(this);
+    /*connect(ui->ChatPage, &QPushButton::clicked, this, [=]() {
+        qDebug() << "ChatButton clicked!";
+        emit requestOpenChat();
+    });*/
     setWindowTitle("首页");
     //设置日期
     QDate date = QDate::currentDate();
@@ -57,6 +63,8 @@ void HomePage::on_RestButton_clicked()
 
 void HomePage::on_ChatPage_clicked()
 {
-    emit requestSwitchToChatPage(); //进入聊天界面
+    emit requestSwitchToChatPage(); // 发出打开聊天对话框的信号;
 }
+
+
 

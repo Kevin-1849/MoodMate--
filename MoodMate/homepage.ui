@@ -153,7 +153,7 @@ font: 700 24pt &quot;Kaiti SC&quot;;
 </string>
       </property>
       <property name="text">
-       <string>你还未设置今日心情</string>
+       <string>来记录一下今日心情吧</string>
       </property>
      </widget>
      <widget class="QPushButton" name="DiaryButton">
@@ -230,7 +230,7 @@ border:None</string>
 font: 700 24pt &quot;Kaiti SC&quot;;</string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;你今日还未参加心理测试&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;来测测你的心理状态吧&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="TestButton">
@@ -310,7 +310,7 @@ font: 700 24pt &quot;Kaiti SC&quot;;
 </string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;你今天休息了0min&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;忙了一整天了&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="RestButton">
@@ -394,7 +394,7 @@ border:None</string>
      <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>50</x>
         <y>50</y>
         <width>311</width>
         <height>61</height>
@@ -406,7 +406,7 @@ font: 700 24pt &quot;Kaiti SC&quot;;
 </string>
       </property>
       <property name="text">
-       <string>你今天还未和心理助手对话</string>
+       <string>来和你的心理助手对话吧</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_8">

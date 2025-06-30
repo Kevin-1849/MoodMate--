@@ -2,6 +2,8 @@
 #define ACHIEVEMENT_H
 
 #include <QWidget>
+#include <QVector>
+#include "achievementitem.h"
 
 namespace Ui {
 class Achievement;
@@ -14,6 +16,9 @@ class Achievement : public QWidget
 public:
     explicit Achievement(QWidget *parent = nullptr);
     ~Achievement();
+    QVector<AchievementItem*> achieveList;//成就集
+    void addAchItem(AchievementItem* item);
+
 
 private:
     Ui::Achievement *ui;

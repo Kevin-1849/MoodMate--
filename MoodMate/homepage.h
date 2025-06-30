@@ -32,6 +32,7 @@ signals:
     void requestSwitchToTestPage();
     void requestSwitchToChatPage();
     void requestSwitchToRestPage();
+    //void requestOpenChat(); // 添加打开聊天对话框的信号
 
 private:
     Ui::HomePage *ui;

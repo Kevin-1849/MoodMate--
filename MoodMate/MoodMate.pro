@@ -1,4 +1,6 @@
-QT       += core gui
+QT += core gui network
+QT += multimedia
+QT += charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,6 +12,7 @@ CONFIG += c++17
 
 SOURCES += \
     achievement.cpp \
+    achievementitem.cpp \
     aichat.cpp \
     emojicalendarwidget.cpp \
     homepage.cpp \
@@ -23,6 +26,7 @@ SOURCES += \
 
 HEADERS += \
     achievement.h \
+    achievementitem.h \
     aichat.h \
     emojicalendarwidget.h \
     homepage.h \
@@ -35,6 +39,7 @@ HEADERS += \
 
 FORMS += \
     achievement.ui \
+    achievementitem.ui \
     aichat.ui \
     homepage.ui \
     mainwindow.ui \
@@ -50,8 +55,13 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     emoji.qrc \
-    icon.qrc
+    icon.qrc \
+    sounds.qrc
 
 DISTFILES += \
+    chat_history.json \
+    config.ini \
+    data/achievement_data.json \
+    data/achievement_status.json \
     data/mood_diary.json \
     mood_diary.json

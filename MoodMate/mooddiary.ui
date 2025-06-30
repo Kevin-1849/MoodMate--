@@ -561,7 +561,7 @@ QCalendarWidget QAbstractItemView::item:selected {
     }</string>
          </property>
         </widget>
-        <widget class="QGroupBox" name="groupBox">
+        <widget class="QGroupBox" name="dairybox">
          <property name="geometry">
           <rect>
            <x>0</x>

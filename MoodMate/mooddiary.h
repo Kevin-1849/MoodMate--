@@ -31,11 +31,8 @@ private slots:
     //void onEditButtonClicked();
 
     void on_editButton_clicked();
-
     void on_calendarWidget_clicked(const QDate &date);
-
     void on_returnButton_clicked();
-
     void on_saveButton_clicked();
 
 private:
@@ -50,6 +47,7 @@ private:
     void addMoodRecord(QListWidget *listWidget, const QString &timeLabelText, const QString &iconPath, const QString &noteText);
     void set_default(QComboBox* box, QString text);
     void set_default(QTextEdit* edit, QString text);
+    void judge_achievement(const QDate &date);
 };
 
 

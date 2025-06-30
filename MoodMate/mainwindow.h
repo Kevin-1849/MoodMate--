@@ -38,6 +38,9 @@ private:
     AIChat* chatPage;//AI聊天界面
     Rest* restPage;//冥想休息界面
     Achievement* achievementPage;//成就界面
+    void openChatDialog();
+    AIChat* chatDialog = nullptr; // 对话框指针
+
 
 };
 #endif // MAINWINDOW_H

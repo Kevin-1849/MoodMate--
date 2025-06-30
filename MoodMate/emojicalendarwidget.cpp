@@ -1,8 +1,6 @@
 #include "emojicalendarwidget.h"
 #include <QPainter>
 #include <QFont>
-
-
 EmojiCalendarWidget::EmojiCalendarWidget(QWidget *parent)
     : QCalendarWidget(parent)
 {
@@ -55,7 +53,6 @@ EmojiCalendarWidget::EmojiCalendarWidget(QWidget *parent)
     //emojiMap[date] = emoji;
     updateCell(date); // 只更新这一天
 }*/
-
 void EmojiCalendarWidget::paintCell(QPainter *painter, const QRect &rect, QDate date) const
 {
     // 调用父类绘制原始内容

@@ -14,6 +14,10 @@
 #include <QProxyStyle>
 #include <QMessageBox>
 #include <QCalendarWidget>
+#include <QFile>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
 
 MoodDiary::MoodDiary(QWidget *parent)
     : QWidget(parent)
@@ -42,7 +46,7 @@ void MoodDiary::on_calendarWidget_clicked(const QDate &date)
 void MoodDiary::updateCalendar(){
     ui->calendarWidget->moodData.load("data/mood_diary.json");
     ui->calendarWidget->refreshCalendar();
-    qDebug() << "1";
+    //qDebug() << "1";
     ui->calendarWidget->update();
 }
 
@@ -96,6 +100,8 @@ void MoodDiary::updateMoodPreview() {
     addMoodRecord(ui->timeRecordList, "早上：", mood.timeSlots["morning"].emoji, mood.timeSlots["morning"].note);
     addMoodRecord(ui->timeRecordList, "下午：", mood.timeSlots["afternoon"].emoji, mood.timeSlots["afternoon"].note);
     addMoodRecord(ui->timeRecordList, "晚上：", mood.timeSlots["evening"].emoji, mood.timeSlots["evening"].note);
+
+    judge_achievement(selectedDate);
 }
 
 void MoodDiary::on_editButton_clicked()
@@ -111,6 +117,7 @@ void MoodDiary::show_editPage(){
     //设置combo选择框
     QComboBox* boxes[] = {ui->dailyEmojiBox, ui->morningEmojiBox, ui->afternoonEmojiBox, ui->eveningEmojiBox};
     for (QComboBox* box : boxes) {
+        if(box->count()) break;
         box->setStyle(new QProxyStyle("Fusion"));
         box->addItem("");
         for(auto emoji: emojiList){
@@ -174,3 +181,50 @@ void MoodDiary::on_saveButton_clicked()
     QMessageBox::information(this, "保存成功", "你的心情记录已保存", QMessageBox::Ok);
 }
 
+//根据心情情况来判断
+void MoodDiary::judge_achievement(const QDate &date){
+    auto mood = moodData.getMoodForDate(date);
+    if(mood.dailyEmoji.isEmpty())return;
+
+    qDebug() << "judge";
+
+    QDate cdate;
+    int count = 1;
+    for(int i = 1; i < 30; ++i){
+        cdate = date.addDays(-i);
+        auto cmood = moodData.getMoodForDate(cdate);
+        if(cmood.dailyEmoji.isEmpty())break;
+        else count += 1;
+    }
+
+    for(int i = 1; i < 30; ++i){
+        cdate = date.addDays(+i);
+        auto cmood = moodData.getMoodForDate(cdate);
+        if(cmood.dailyEmoji.isEmpty())break;
+        else count += 1;
+    }
+
+    qDebug() << count;
+
+    QFile file("data/achievement_status.json");
+    QJsonObject achievementStatus;
+    if (file.open(QIODevice::ReadOnly)) {
+        QByteArray data = file.readAll();
+        file.close();
+
+        QJsonDocument doc = QJsonDocument::fromJson(data);
+        achievementStatus = doc.object();
+    }
+    if(count >= 7){
+        achievementStatus["日记达人"] = true;
+    }
+    if(count >= 30){
+        achievementStatus["日记达人（进阶）"] = true;
+    }
+
+    QJsonDocument doc(achievementStatus);
+    if (file.open(QIODevice::WriteOnly)) {
+        file.write(doc.toJson());
+        file.close();
+    }
+}

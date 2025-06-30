@@ -13,19 +13,92 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>60</y>
-     <width>171</width>
-     <height>121</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>这是成就</string>
-   </property>
-  </widget>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="styleSheet">
+      <string notr="true">/* 整体滚动条背景 */
+QScrollBar:vertical {
+    background: #eaffea;  /* 浅绿色滚动条槽背景 */
+    width: 12px;
+    margin: 0px 0px 0px 0px;
+    border-radius: 6px;
+}
+
+/* 滚动条滑块 */
+QScrollBar::handle:vertical {
+    background: #a0e0a0; /* 深一点的绿色 */
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+/* 滚动条滑块hover状态 */
+QScrollBar::handle:vertical:hover {
+    background: #7ac97a;
+}
+
+/* 滚动条两端箭头 */
+QScrollBar::sub-line:vertical, QScrollBar::add-line:vertical {
+    height: 0px; /* 不显示箭头 */
+}
+
+/* 滚动条槽 */
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>703</width>
+        <height>1200</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>1200</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>1200</height>
+       </size>
+      </property>
+      <widget class="QWidget" name="verticalWidget" native="true">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>711</width>
+         <height>1201</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="achievementList">
+        <property name="spacing">
+         <number>10</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

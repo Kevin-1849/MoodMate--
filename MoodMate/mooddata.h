@@ -35,7 +35,7 @@ public:
     //设置某一天的MoodDiary
     void setMoodForDate(const QDate &date, const DailyMood &mood);
 
-private:
+//private:
     QMap<QString, DailyMood> moodMap; // key: date.toString("yyyy-MM-dd")
 };
 

@@ -67,6 +67,23 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->navigationBar, &QListWidget::currentRowChanged,
             stackWidget, &QStackedWidget::setCurrentIndex);
 
+    //连接导航栏与页面容器
+    /*connect(ui->navigationBar, &QListWidget::currentRowChanged, [this](int index) {
+        // 如果不是"心理助手"项，切换页面
+        if (index != 3) {
+            stackWidget->setCurrentIndex(index);
+        }
+    });*/
+
+
+    /*// 单独处理"心理助手"点击
+    connect(ui->navigationBar, &QListWidget::itemClicked, this, [this](QListWidgetItem *item) {
+        if (item->text() == "心理助手") {
+            qDebug() << 10086;
+            openChatDialog();
+        }
+    });*/
+
     //接收信号
     connect(homePage, &HomePage::requestSwitchToDiaryPage, this, [=]() {
         ui->navigationBar->setCurrentRow(1);
@@ -84,9 +101,32 @@ MainWindow::MainWindow(QWidget *parent)
         ui->navigationBar->setCurrentRow(3);
     });
 
+
+    // 主界面直接打开聊天窗口
+    //connect(homePage, &HomePage::requestOpenChat, this, &MainWindow::openChatDialog);
 }
+
+
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+/*void MainWindow::openChatDialog() {
+    if (!chatDialog) {
+        // 创建新的聊天对话框
+        chatDialog = new AIChat(this);
+        chatDialog->setAttribute(Qt::WA_DeleteOnClose); // 关闭时自动删除
+        connect(chatDialog, &QDialog::finished, this, [this]() {
+            chatDialog = nullptr; // 对话框关闭后重置指针
+        });
+    }
+    qDebug() << 10096;
+    chatDialog->show(); // 显示对话框
+    qDebug() << 10100;
+    chatDialog->activateWindow(); // 激活窗口
+    qDebug() << 11100;
+    chatDialog->raise(); // 置于顶层
+    qDebug() << 11111;
+}*/

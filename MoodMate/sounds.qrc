@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/sounds">
+        <file>rain.mp3</file>
+        <file>ocean.mp3</file>
+        <file>soft_bgm.mp3</file>
+        <file>windbell.mp3</file>
+    </qresource>
+</RCC>

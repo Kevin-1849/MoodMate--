@@ -1,0 +1,12 @@
+[
+    {
+        "content": "你好",
+        "role": "user",
+        "timestamp": "2025-06-29T09:55:33"
+    },
+    {
+        "content": "你好！ 很高兴见到你～有什么我可以帮你的吗？",
+        "role": "assistant",
+        "timestamp": "2025-06-29T09:55:38"
+    }
+]
